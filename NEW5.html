@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<title>Nishant Sisodia | Digital Growth & Marketing Expert</title>
+<meta name="description" content="Portfolio of Nishant Sisodia - Digital Growth Strategist, Storyteller, and Systems Optimizer.">
+
+<!-- BRAND TYPOGRAPHY STACK -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════
+   GLOBAL THEME & TYPOGRAPHY
+══════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --sky0: #e6edf3; --sky1: #dce5ef; --sky2: #cddff2; --sky3: #b9d5ee;
+  --ink0: #0d1117; --ink1: #1f2937; --ink2: #475569; --ink3: #64748b;
+  --gold: #b8892a; --goldL: #d4a94a; 
+  --glass-bg: rgba(255,255,255,0.45); --glass-bg-strong: rgba(255,255,255,0.7);
+  --glass-border: rgba(255,255,255,0.7); --glass-border-outer: rgba(185,210,240,0.5);
+  --glass-shadow: 0 8px 32px rgba(100,140,200,0.08), 0 1px 0 rgba(255,255,255,0.7) inset;
+  --glass-shadow-hover: 0 16px 48px rgba(100,140,200,0.15), 0 1px 0 rgba(255,255,255,1) inset;
+  --body-bg: #e6edf3;
+  --nav-bg: rgba(255,255,255,0.65); --nav-bg-scrolled: rgba(255,255,255,0.85); --nav-border: rgba(185,210,240,0.5);
+  --green: #1a7f37; --blue: #0284c7; --r: 16px; --ease: cubic-bezier(.22,1,.36,1);
+  
+  --font-brand: 'Josefin Sans', sans-serif;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+html.dark{
+  --sky0: #010409; --sky1: #0d1117; --sky2: #161b22; --sky3: #21262d;
+  --ink0: #f0f6fc; --ink1: #c9d1d9; --ink2: #8b949e; --ink3: #6e7681;
+  --gold: #e3b341; --goldL: #f0c869; 
+  --glass-bg: rgba(13,17,23,0.65); --glass-bg-strong: rgba(22,27,34,0.85);
+  --glass-border: rgba(240,246,252,0.1); --glass-border-outer: rgba(227,179,65,0.15);
+  --glass-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.06) inset;
+  --glass-shadow-hover: 0 16px 48px rgba(0,0,0,0.7), 0 1px 0 rgba(255,255,255,0.09) inset;
+  --body-bg: #010409;
+  --nav-bg: rgba(1,4,9,0.75); --nav-bg-scrolled: rgba(1,4,9,0.92); --nav-border: rgba(240,246,252,0.1);
+  --green: #238636; --blue: #38bdf8;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--body-bg); color: var(--ink0);
+  font-family: var(--font-ui); font-weight:400;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased; min-height:100vh;
+}
+
+/* Reduced mobile side padding from 24px to 16px */
+.sec {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(60px, 8vw, 120px) clamp(16px, 5vw, 80px); 
+  max-width: 1280px; width: 100%; margin: 0 auto; position: relative; z-index: 10;
+}
+
+a { text-decoration:none; color:inherit; }
+img { display:block; max-width:100%; object-fit:cover; }
+
+/* BACKGROUND EFFECTS */
+.aurora-bg { position: fixed; inset: 0; z-index: -3; pointer-events: none; overflow: hidden; }
+.aurb { position: absolute; border-radius: 50%; filter: blur(80px); animation: floatAurora 20s infinite alternate ease-in-out; opacity: 0.6; }
+.ab-1 { width: 50vw; height: 50vw; background: rgba(184,137,42,0.15); top: -10%; left: -10%; }
+.ab-2 { width: 40vw; height: 40vw; background: rgba(150,200,255,0.25); bottom: 10%; right: -5%; animation-delay: -5s; }
+.ab-3 { width: 45vw; height: 45vw; background: rgba(200,220,255,0.3); top: 30%; left: 30%; animation-delay: -10s; filter: blur(120px); }
+html.dark .ab-1 { background: rgba(227,179,65,0.08); } html.dark .ab-2 { background: rgba(139,92,246,0.08); } html.dark .ab-3 { background: rgba(56,189,248,0.05); }
+@keyframes floatAurora { 0% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(5%, 10%, 0) scale(1.1); } 100% { transform: translate3d(-5%, 5%, 0) scale(0.9); } }
+
+.floating-bubbles { position: fixed; inset: 0; pointer-events: none; z-index: -2; overflow: hidden; }
+html.dark .floating-bubbles { opacity: 0; display: none; }
+.bubble { position: absolute; bottom: -150px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.1) 60%, transparent 100%); box-shadow: inset 0 0 15px rgba(255,255,255,0.8), 0 4px 15px rgba(100,140,200,0.1); backdrop-filter: blur(2px); animation: floatUp infinite linear; opacity: 0; }
+.b1 { width:40px; height:40px; left:15%; animation-duration:12s; } .b2 { width:85px; height:85px; left:35%; animation-duration:18s; animation-delay:-5s; } .b3 { width:35px; height:35px; left:55%; animation-duration:10s; animation-delay:-2s; }
+@keyframes floatUp { 0% { transform: translate3d(0px, 10vh, 0) scale(0.8); opacity: 0; } 10% { opacity: 0.6; } 90% { opacity: 0.6; } 100% { transform: translate3d(40px, -110vh, 0) scale(1.1); opacity: 0; } }
+
+/* NAVIGATION */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:800; height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(16px,4vw,64px); background:var(--nav-bg);
+  backdrop-filter:blur(24px) saturate(180%); border-bottom:1px solid var(--nav-border);
+  transition:background .3s, box-shadow .3s;
+}
+nav.scrolled{ box-shadow:0 1px 0 rgba(255,255,255,0.1) inset, 0 8px 32px rgba(0,0,0,0.12); }
+.logo{display:flex;align-items:center;gap:12px; font-family:var(--font-brand);font-weight:900;font-size:clamp(18px, 4vw, 22px);letter-spacing:2px;color:var(--ink0); text-transform: uppercase; z-index: 1001;}
+
+.nav-right { display: flex; align-items: center; gap: 24px; }
+.nav-controls { display: flex; align-items: center; gap: 16px; z-index: 1001; }
+.nav-links{display:flex;gap:12px; align-items: center;}
+
+.theme-toggle{ position:relative;width:52px;height:28px;cursor:pointer;flex-shrink:0;}
+.theme-toggle input{opacity:0;width:0;height:0;position:absolute}
+.tt-track{ position:absolute;inset:0; background:linear-gradient(135deg,#b8d4f8,#d0e8ff); border:1px solid rgba(185,210,240,.8); border-radius:100px; transition:all .4s var(--ease); box-shadow:0 2px 6px rgba(100,140,200,.15) inset; }
+html.dark .tt-track{ background:linear-gradient(135deg,#0d1228,#1a2144); border-color:rgba(201,168,76,.35); box-shadow:0 0 8px rgba(201,168,76,.1) inset; }
+.tt-thumb{ position:absolute;top:3px;left:3px; width:22px;height:22px;border-radius:50%; display:flex;align-items:center;justify-content:center; font-size:13px; background:rgba(255,255,255,.95); transition:all .4s var(--ease); }
+html.dark .tt-thumb{ transform:translate3d(24px,0,0); background:linear-gradient(135deg,#c9a84c,#e8c96b); }
+
+/* Hamburger Menu */
+.menu-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+.menu-btn span { width: 24px; height: 2px; background: var(--ink0); transition: all 0.3s var(--ease); border-radius: 2px; }
+
+/* HERO SECTION */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: clamp(100px, 12vw, 140px) 0 clamp(40px, 6vw, 80px); position: relative; }
+.hero-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(30px, 5vw, 60px); align-items: center; padding: 0 clamp(16px, 5vw, 80px); z-index: 10; position: relative; }
+
+/* Mobile scaling for extremely small screens */
+.hero-pill { display:inline-flex;align-items:center;gap:10px; padding:8px 16px; background:var(--glass-bg); border:1px solid var(--glass-border); border-radius:100px; margin-bottom:24px; box-shadow: var(--glass-shadow); font-family:var(--font-mono); font-size:clamp(11px, 3vw, 13px); font-weight:800; color:var(--gold); text-transform:uppercase; letter-spacing: 2px; backdrop-filter: blur(10px); }
+
+/* Adjusted clamp to prevent text overflow on mobile */
+.hero-h1 { 
+    font-family: var(--font-brand); 
+    font-size: clamp(38px, 8vw, 85px); 
+    font-weight: 900; 
+    line-height: 1.05; 
+    letter-spacing: -0.04em; 
+    margin-bottom: 20px; 
+    text-transform: uppercase;
+    background:linear-gradient(160deg,var(--ink0) 0%,var(--ink1) 40%,var(--goldL) 75%,var(--gold) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    padding-bottom: 5px;
+}
+html.dark .hero-h1 {
+    background:linear-gradient(160deg,#ffffff 0%,rgba(242,244,248,.88) 35%,#e8c96b 70%,#c9a84c 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.hero-slider { position: relative; width: 100%; min-height: 440px; }
+.hero-slide { position: absolute; top: 0; left: 0; width: 100%; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.8s var(--ease), visibility 0.8s; z-index: 1; }
+.hero-slide.active { position: relative; opacity: 1; visibility: visible; pointer-events: all; z-index: 2; }
+.hero-content-box { position: relative; padding: 10px 0; }
+.hero-slide .hero-content-box > * { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.hero-slide.active .hero-content-box > *:nth-child(1) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.hero-slide.active .hero-content-box > *:nth-child(2) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.hero-slide.active .hero-content-box > *:nth-child(3) { transition-delay: 0.45s; opacity: 1; transform: translateY(0); }
+.hero-slide.active .hero-content-box > *:nth-child(4) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+.slider-controls { display: flex; align-items: center; gap: 16px; margin-top: 24px; opacity: 0; animation: fadeUp .7s 1s var(--ease) forwards; }
+.slider-dots { display: flex; gap: 10px; align-items: center; }
+.dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(185,210,240,.6); cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
+html.dark .dot { background: rgba(240,246,252,.15); }
+.dot.active { width: 44px; border-radius: 10px; background: rgba(185,210,240,.3); }
+html.dark .dot.active { background: rgba(240,246,252,.1); }
+.dot.active::after { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 0%; background: var(--gold); animation: dotFill 7.5s linear forwards; }
+@keyframes dotFill { to { width: 100%; } }
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-p { font-size: clamp(15px, 1.6vw, 22px); color: var(--ink2); line-height: 1.7; margin-bottom: 32px; max-width: 600px; font-weight: 500;}
+
+.btn-primary { display:inline-flex; align-items:center; justify-content:center; padding:16px 32px; background:linear-gradient(135deg,var(--goldL),var(--gold)); color:#fff; font-size:14px; font-weight:800; border-radius:12px; transition: all .2s; box-shadow: 0 4px 16px rgba(184,137,42,.3),0 1px 0 rgba(255,255,255,.25) inset; text-transform: uppercase; letter-spacing: 2px; text-align: center;}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(184,137,42,.4); }
+
+.hero-visual { position: relative; width: 100%; aspect-ratio: 1/1; max-width: 500px; margin: 0 auto; }
+.abstract-sphere { position: absolute; inset: 10%; border-radius: 50%; background: linear-gradient(135deg, var(--goldL), var(--blue)); filter: blur(40px); opacity: 0.5; animation: pulseSphere 6s alternate infinite ease-in-out; }
+@keyframes pulseSphere { 100% { transform: scale(1.1); filter: blur(60px); } }
+.dash-card { position: absolute; background: var(--glass-bg-strong); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 16px; box-shadow: var(--glass-shadow); padding: 20px; display: flex; align-items: center; gap: 15px; animation: floatDash 5s infinite alternate ease-in-out; }
+.dc-1 { top: 10%; left: -5%; border-left: 3px solid var(--gold); }
+.dc-2 { bottom: 20%; right: -10%; animation-delay: -2s; border-left: 3px solid var(--blue); }
+.dc-icon { background: var(--glass-bg); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid var(--glass-border-outer); font-size: 20px;}
+.dc-info h4 { font-family: var(--font-mono); font-size: 10px; color: var(--ink2); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; font-weight: 700; }
+.dc-info p { font-family: var(--font-brand); font-size: 20px; font-weight: 800; color: var(--ink0); line-height: 1; }
+
+/* SECTIONS */
+.sec-header { text-align: center; max-width: 800px; margin: 0 auto clamp(40px, 6vw, 60px); }
+.sec-title { font-family: var(--font-brand); font-size: clamp(30px, 8vw, 56px); letter-spacing:-0.03em; font-weight: 900; margin-bottom: 16px; color: var(--ink0); text-transform: uppercase;}
+.sec-subtitle { font-size: clamp(15px, 1.5vw, 20px); color: var(--ink2); line-height: 1.7; }
+
+/* PHILOSOPHY GRID */
+.phil-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.phil-card { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 30px 24px; border-radius: var(--r); box-shadow: var(--glass-shadow); transition: all 0.4s ease; text-align: center; }
+.phil-card:hover { transform: translateY(-10px); box-shadow: var(--glass-shadow-hover); border-color: var(--gold); background: var(--glass-bg-strong); }
+.phil-icon { font-size: 36px; margin-bottom: 16px; display: inline-block; }
+.phil-h3 { font-family: var(--font-brand); font-size: 22px; font-weight: 800; color: var(--ink0); margin-bottom: 12px; }
+.phil-p { font-size: 15px; color: var(--ink2); line-height: 1.6; }
+
+/* TECH STACK GRID */
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.tool-card { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 30px 24px; border-radius: var(--r); box-shadow: var(--glass-shadow); transition: all 0.4s ease; display: flex; flex-direction: column;}
+.tool-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: var(--glass-shadow-hover); background: var(--glass-bg-strong); }
+.tool-icon { font-size: 32px; margin-bottom: 16px; }
+.tool-h3 { font-family: var(--font-brand); font-size: 22px; font-weight: 800; color: var(--ink0); margin-bottom: 16px; letter-spacing: -0.02em;}
+.tool-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tool-tag { padding: 6px 14px; background: rgba(184,137,42,0.1); border: 1px solid rgba(184,137,42,0.3); border-radius: 100px; font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 0.5px; transition: all 0.2s;}
+.tool-card:hover .tool-tag { background: rgba(184,137,42,0.2); }
+
+/* CASE STUDIES */
+.case-card { 
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; 
+    background: var(--glass-bg); backdrop-filter: blur(20px); 
+    border: 1px solid var(--glass-border); border-radius: 24px; 
+    overflow: hidden; box-shadow: var(--glass-shadow); 
+    margin-bottom: 40px; align-items: center; padding: 40px; 
+    transition: all 0.4s ease;
+}
+.case-card:hover { border-color: var(--gold); box-shadow: var(--glass-shadow-hover); transform: translateY(-5px); background: var(--glass-bg-strong);}
+.case-card.reverse { grid-template-columns: 1fr 1fr; }
+@media(min-width: 961px) {
+    .case-card.reverse .case-img-wrap { order: 2; }
+    .case-card.reverse .case-content { order: 1; }
+}
+
+.case-img-wrap { width: 100%; height: 100%; min-height: 300px; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border-outer); }
+.case-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.case-card:hover .case-img-wrap img { transform: scale(1.05); }
+
+.case-content { display: flex; flex-direction: column; justify-content: center; }
+.case-tag { font-family: var(--font-mono); font-size: 12px; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; display: block;}
+.case-title { font-family: var(--font-brand); font-size: clamp(28px, 6vw, 44px); font-weight: 900; color: var(--ink0); margin-bottom: 12px; line-height: 1.1; letter-spacing: -0.03em;}
+.case-desc { font-size: 15px; color: var(--ink2); line-height: 1.6; margin-bottom: 20px; }
+.case-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;}
+.case-list li { font-size: 14px; color: var(--ink1); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+.case-list li::before { content: '✦'; color: var(--gold); font-size: 16px; line-height: 1.2; }
+.case-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-outline { display:inline-flex; align-items:center; justify-content:center; padding:12px 24px; background:transparent; color:var(--ink0); font-size:12px; font-weight:800; border:2px solid var(--glass-border-outer); border-radius:12px; transition: all .2s; text-transform: uppercase; letter-spacing: 1px; text-align: center;}
+html.dark .btn-outline { color: #fff; }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* NISHANKA YOGI SPECIAL GRID */
+.ny-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+.ny-persona { background: var(--glass-bg); padding: 12px; border-radius: 12px; border: 1px solid var(--glass-border-outer); text-align: center; }
+.ny-persona h5 { font-family: var(--font-brand); font-size: 14px; color: var(--gold); margin-bottom: 4px; text-transform: uppercase; }
+.ny-persona p { font-size: 11px; color: var(--ink2); line-height: 1.4; }
+
+/* EXPERIENCE TIMELINE */
+.exp-grid { display: grid; gap: 24px; position: relative; max-width: 900px; margin: 0 auto;}
+.exp-grid::before { content: ''; position: absolute; left: 30px; top: 0; bottom: 0; width: 2px; background: var(--glass-border-outer); }
+.exp-card { display: grid; grid-template-columns: 60px 1fr; gap: 24px; align-items: start; position: relative; }
+.exp-dot { width: 60px; height: 60px; background: var(--glass-bg-strong); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2; font-weight: bold; color: var(--gold); font-size: 20px; box-shadow: 0 0 0 8px var(--body-bg); }
+.exp-content { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 24px; border-radius: var(--r); box-shadow: var(--glass-shadow); transition: all 0.3s ease; }
+.exp-content:hover { border-color: var(--gold); box-shadow: var(--glass-shadow-hover); background: var(--glass-bg-strong); transform: translateX(10px); }
+.exp-date { font-family: var(--font-mono); font-size: 11px; color: var(--gold); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; display: block; text-transform: uppercase; }
+.exp-title { font-family: var(--font-brand); font-size: 22px; font-weight: 800; color: var(--ink0); margin-bottom: 4px; }
+.exp-company { font-size: 15px; color: var(--ink1); font-weight: 600; margin-bottom: 12px; }
+
+/* STATS */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.stat-box { background: var(--glass-bg-strong); border: 1px solid var(--glass-border); border-radius: var(--r); padding: 30px 20px; text-align: center; box-shadow: var(--glass-shadow); transition: all 0.3s; }
+.stat-box:hover { transform: scale(1.05); border-color: var(--gold); background: rgba(184,137,42,0.05); }
+.stat-num { font-family: var(--font-brand); font-size: 42px; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 13px; color: var(--ink1); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.stat-sub { font-size: 12px; color: var(--ink3); margin-top: 6px; }
+
+/* FOOTER */
+footer { padding: 80px 16px 60px; border-top: 1px solid var(--glass-border-outer); margin-top: 40px; background: rgba(0,0,0,0.02); }
+html.dark footer { background: rgba(255,255,255,0.01); }
+.ft-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+.ft-h { font-family: var(--font-brand); font-size: clamp(28px, 6vw, 48px); font-weight: 900; margin-bottom: 16px; text-transform: uppercase;}
+.ft-p { color: var(--ink2); font-size: 15px; line-height: 1.6; margin-bottom: 24px; }
+.ft-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.ft-links a { padding: 12px 20px; background: var(--glass-bg-strong); border: 1px solid var(--glass-border); border-radius: 12px; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s; box-shadow: var(--glass-shadow); }
+.ft-links a:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
+
+.copyright { text-align: center; padding-top: 60px; color: var(--ink3); font-size: 13px; font-weight: 500; }
+
+/* ANIMATIONS */
+.fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+
+
+/* ══════════════════════════════════════════════════
+   MOBILE OPTIMIZATIONS (MEDIA QUERIES)
+══════════════════════════════════════════════════ */
+@media(max-width: 960px) { 
+    .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; } 
+    .hero-p { margin-inline: auto; }
+    .case-card { grid-template-columns: 1fr !important; padding: 24px; gap: 24px; }
+    .case-img-wrap { min-height: 250px; }
+    .dc-1 { left: 10%; } .dc-2 { right: 10%; }
+}
+
+@media(max-width: 768px) {
+    /* Mobile Menu Implementation */
+    .menu-btn { display: flex; }
+    .nav-links {
+        position: absolute; top: 72px; left: 0; width: 100%;
+        background: var(--nav-bg-scrolled); backdrop-filter: blur(24px);
+        flex-direction: column; padding: 24px 16px; gap: 16px;
+        border-bottom: 1px solid var(--nav-border);
+        transform: translateY(-150%); opacity: 0; transition: all 0.4s var(--ease);
+        pointer-events: none; align-items: stretch;
+    }
+    .nav-links.active {
+        transform: translateY(0); opacity: 1; pointer-events: all; box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .nl { text-align: center; padding: 12px; background: rgba(0,0,0,0.03); border-radius: 12px;}
+    html.dark .nl { background: rgba(255,255,255,0.03); }
+
+    /* Menu Open Icon Animation */
+    .menu-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-btn.active span:nth-child(2) { opacity: 0; }
+    .menu-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Timeline Adjustments */
+    .exp-grid::before { left: 20px; }
+    .exp-card { grid-template-columns: 40px 1fr; gap: 16px; }
+    .exp-dot { width: 40px; height: 40px; font-size: 14px; box-shadow: 0 0 0 4px var(--body-bg); }
+    .exp-content { padding: 20px; }
+    .exp-content:hover { transform: translateX(5px); } /* Less movement on mobile */
+
+    .ft-links { flex-direction: column; }
+    .ft-links a { width: 100%; }
+    
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media(max-width: 600px) { 
+    .ny-grid { grid-template-columns: 1fr; } 
+    .case-actions { flex-direction: column; width: 100%; }
+    .case-actions a, .case-actions span { width: 100%; }
+}
+
+@media(max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .hero-slider { min-height: 480px; } /* More height for stacked text on tiny screens */
+    .dc-1 { top: -5%; left: 0%; padding: 12px; }
+    .dc-2 { bottom: 5%; right: 0%; padding: 12px; }
+    .dc-icon { width: 36px; height: 36px; font-size: 16px;}
+    .dc-info p { font-size: 16px; }
+    .btn-primary { width: 100%; }
+    .phil-grid, .tools-grid { grid-template-columns: 1fr; }
+    .hero-visual { max-width: 280px; }
+}
+</style>
+</head>
+<body>
+
+<!-- BACKGROUND EFFECTS -->
+<div class="aurora-bg"><div class="aurb ab-1"></div><div class="aurb ab-2"></div><div class="aurb ab-3"></div></div>
+<div class="floating-bubbles"><div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div></div>
+
+<!-- NAVIGATION -->
+<nav id="nav">
+  <div class="logo">NISHANT SISODIA</div>
+  
+  <div class="nav-right">
+    <div class="nav-links" id="navLinks">
+      <a href="#about" class="nl" style="display:none;">About</a>
+      <a href="#tools" class="nl">Tech Stack</a>
+      <a href="#experience" class="nl">Experience</a>
+      <a href="#projects" class="nl">Case Studies</a>
+    </div>
+
+    <div class="nav-controls">
+      <label class="theme-toggle" title="Switch Theme">
+        <input type="checkbox" id="themeToggle" onchange="toggleTheme(this)">
+        <div class="tt-track"></div>
+        <div class="tt-thumb" id="ttThumb">☀️</div>
+      </label>
+      <div class="menu-btn" id="menuBtn">
+          <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text fade-up" style="position: relative;">
+      <div class="hero-slider" id="heroSlider">
+        
+        <!-- Slide 1: Core Strategy -->
+        <div class="hero-slide active">
+          <div class="hero-content-box">
+            <div class="hero-pill">Digital Growth & Marketing Expert</div>
+            <h1 class="hero-h1">I BUILD BRANDS WITH<br>PSYCHOLOGY & DATA.</h1>
+            <p class="hero-p">Brand building requires more than one element. I combine consumer psychology with deep data analytics and operational logic to create revenue-driving ecosystems.</p>
+            <a href="#experience" class="btn-primary">View My Profile →</a>
+          </div>
+        </div>
+
+        <!-- Slide 2: Operations Optimization -->
+        <div class="hero-slide">
+          <div class="hero-content-box">
+            <div class="hero-pill">Smart Tech & Execution</div>
+            <h1 class="hero-h1">I OPTIMIZE<br>BUSINESS OPERATIONS.</h1>
+            <p class="hero-p">I eliminate friction. Beyond marketing, I use smart tools and custom scripts to streamline workflows, saving critical time and scaling efficiency.</p>
+            <a href="#tools" class="btn-primary">View Tech Stack →</a>
+          </div>
+        </div>
+
+        <!-- Slide 3: Growth & Scaling -->
+        <div class="hero-slide">
+          <div class="hero-content-box">
+            <div class="hero-pill">E-Commerce & SEO</div>
+            <h1 class="hero-h1">I SCALE E-COMMERCE<br>WITH STRATEGY.</h1>
+            <p class="hero-p">Great stories need an audience. I optimize Shopify architectures and execute deep SEO & Meta Ads strategies to drive consistent organic growth.</p>
+            <a href="#projects" class="btn-primary">View Case Studies →</a>
+          </div>
+        </div>
+
+        <div class="slider-controls">
+          <div class="slider-dots" id="heroSliderDots"></div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="hero-visual fade-up delay-1">
+      <div class="abstract-sphere"></div>
+      <div class="dash-card dc-1">
+        <div class="dc-icon">🎯</div>
+        <div class="dc-info">
+          <h4>Brand Strategy</h4>
+          <p>Data-Driven</p>
+        </div>
+      </div>
+      <div class="dash-card dc-2">
+        <div class="dc-icon">📈</div>
+        <div class="dc-info">
+          <h4>Avg. Traffic Lift</h4>
+          <p>+150% YoY</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY / SKILLS -->
+<section class="sec" id="about">
+  <div class="sec-header fade-up">
+    <h2 class="sec-title">My Operational Trinity</h2>
+    <p class="sec-subtitle">Bridging the gap between human emotion and technical execution.</p>
+  </div>
+  
+  <div class="phil-grid">
+    <div class="phil-card fade-up">
+      <div class="phil-icon">🧠</div>
+      <h3 class="phil-h3">Data-Backed Psychology</h3>
+      <p class="phil-p">Emotion drives the click, but data drives the scale. I map consumer behavior to craft brand stories that connect and back them with measurable performance metrics.</p>
+    </div>
+    <div class="phil-card fade-up delay-1">
+      <div class="phil-icon">⚡</div>
+      <h3 class="phil-h3">Operational Logic</h3>
+      <p class="phil-p">Marketing is only as good as the backend. I use custom tools and automation (Apps Script, n8n) to ensure lead flow and fulfillment are frictionless.</p>
+    </div>
+    <div class="phil-card fade-up delay-2">
+      <div class="phil-icon">🛒</div>
+      <h3 class="phil-h3">E-Commerce SEO</h3>
+      <p class="phil-p">Technical and on-page optimization for platforms like Shopify. My focus is long-term organic growth and improving conversion rates (CRO).</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="sec" id="tools" style="padding-top: 0;">
+  <div class="sec-header fade-up">
+    <h2 class="sec-title">Tech & AI Stack</h2>
+    <p class="sec-subtitle">Software and tools I utilize daily to automate workflows and scale brands.</p>
+  </div>
+  
+  <div class="tools-grid">
+    <div class="tool-card fade-up">
+      <div class="tool-icon">🤖</div>
+      <h3 class="tool-h3">Automation & Gen-AI</h3>
+      <div class="tool-tags">
+        <span class="tool-tag">n8n</span>
+        <span class="tool-tag">Google Apps Script</span>
+        <span class="tool-tag">Zapier</span>
+        <span class="tool-tag">Google Flow</span>
+        <span class="tool-tag">ChatGPT / Gemini</span>
+        <span class="tool-tag">ElevenLabs</span>
+      </div>
+    </div>
+
+    <div class="tool-card fade-up delay-1">
+      <div class="tool-icon">📈</div>
+      <h3 class="tool-h3">Marketing & Data</h3>
+      <div class="tool-tags">
+        <span class="tool-tag">Meta Ads Manager</span>
+        <span class="tool-tag">Google Analytics</span>
+        <span class="tool-tag">Advanced SEO</span>
+        <span class="tool-tag">SQL</span>
+        <span class="tool-tag">MS Excel</span>
+      </div>
+    </div>
+
+    <div class="tool-card fade-up delay-2">
+      <div class="tool-icon">🎨</div>
+      <h3 class="tool-h3">Design & UI</h3>
+      <div class="tool-tags">
+        <span class="tool-tag">Figma</span>
+        <span class="tool-tag">Canva</span>
+        <span class="tool-tag">Adobe Photoshop</span>
+        <span class="tool-tag">Premiere Pro</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="sec" id="experience" style="padding-top: 0;">
+  <div class="sec-header fade-up">
+    <h2 class="sec-title">Career Experience</h2>
+    <p class="sec-subtitle">My professional journey in leading teams and managing high-growth brands.</p>
+  </div>
+  
+  <div class="exp-grid">
+    <div class="exp-card fade-up">
+      <div class="exp-dot">💼</div>
+      <div class="exp-content">
+        <span class="exp-date">Jan 2025 - Present</span>
+        <h3 class="exp-title">Digital Growth & E-commerce Manager</h3>
+        <p class="exp-company">The Navra | Jaipur</p>
+        <ul class="case-list" style="margin-top: 15px; margin-bottom: 0;">
+          <li style="font-size: 14px;">Team Management: Led a cross-functional team of 4 specialists (Video Editor, Graphic Designer, Website Handler, Billing Operator) to ensure a fluid daily workflow and high-speed output.</li>
+          <li style="font-size: 14px;">SEO Architecture: Full website SEO handling and Shopify backend management to ensure technical health and organic visibility.</li>
+          <li style="font-size: 14px;">Operational Efficiency: Streamlined team coordination and task distribution to achieve predictable growth targets.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card fade-up delay-1">
+      <div class="exp-dot">🗳️</div>
+      <div class="exp-content">
+        <span class="exp-date">2024</span>
+        <h3 class="exp-title">Election Campaign Management</h3>
+        <p class="exp-company">Mahesh Chauhan (Sohna BJP) | Haryana</p>
+        <ul class="case-list" style="margin-top: 15px; margin-bottom: 0;">
+          <li style="font-size: 14px;">Coordinated with PR and Election Management teams to strategize political outreach and voter interaction.</li>
+          <li style="font-size: 14px;">Utilized "Jansampark" tool to track campaign progress and analyze voter engagement on the ground.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-card fade-up delay-2">
+      <div class="exp-dot">🏨</div>
+      <div class="exp-content">
+        <span class="exp-date">Mar 2022 - Dec 2024</span>
+        <h3 class="exp-title">Digital Marketing Executive</h3>
+        <p class="exp-company">JPS Residency & Hospitality Services</p>
+        <ul class="case-list" style="margin-top: 15px; margin-bottom: 0;">
+          <li style="font-size: 14px;">Managed social media and brand presence overhaul for better customer retention and local search dominance.</li>
+          <li style="font-size: 14px;">Applied psychological de-escalation tactics and data insights to boost the Customer Satisfaction Index (CSI).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="sec" id="projects" style="padding-top: 0;">
+  <div class="sec-header fade-up">
+    <h2 class="sec-title">Case Studies & Tools</h2>
+    <p class="sec-subtitle">A detailed look at brand growth strategies and custom tools built for efficiency.</p>
+  </div>
+
+  <!-- 1. THE NAVRA -->
+  <div class="case-card fade-up">
+      <div class="case-img-wrap">
+          <img src="https://res.cloudinary.com/dl9vyqkxv/image/upload/v1775084895/FB_C5_wntoji.jpg" alt="The Navra E-Commerce & ERP System">
+      </div>
+      <div class="case-content">
+          <span class="case-tag">Growth Manager & Tech Architect</span>
+          <h3 class="case-title">The Navra (Growth & ERP)</h3>
+          <p class="case-desc">Developed a holistic growth ecosystem for a Jaipur-based fashion brand. Beyond marketing, I streamlined internal operations through custom system architecture.</p>
+          <ul class="case-list">
+              <li>Leadership: Directed a team of 4 creative and technical specialists (Video, Graphics, Web, Billing) to maintain a high-frequency output schedule.</li>
+              <li>Custom ERP System: Built a complete Offline Management ERP using Google Apps Script featuring separate Admin Dashboards and Staff Entry modules.</li>
+              <li>Growth: Revamped Shopify SEO and multi-platform presence to secure substantial organic traffic gains.</li>
+          </ul>
+          <div class="case-actions">
+              <a href="https://thenavra.com/" target="_blank" class="btn-primary" style="padding: 12px 24px; font-size: 12px;">Visit Website</a>
+              <a href="https://script.google.com/macros/s/AKfycbwjnUuT7vO-ecawh5lukp3LSnWHsmziKdnvf0SU32AxBvXmMf8ARVcMGmQKZwwYDhQ/exec" target="_blank" class="btn-outline" style="padding: 12px 24px; font-size: 12px;">Staff Tool</a>
+              <a href="https://script.google.com/macros/s/AKfycbwjnUuT7vO-ecawh5lukp3LSnWHsmziKdnvf0SU32AxBvXmMf8ARVcMGmQKZwwYDhQ/exec?page=admin" target="_blank" class="btn-outline">Admin ERP Demo</a>
+          </div>
+      </div>
+  </div>
+  
+  <!-- 2. SCALVIQ -->
+  <div class="case-card reverse fade-up">
+      <div class="case-img-wrap">
+          <img src="https://res.cloudinary.com/dl9vyqkxv/image/upload/v1775084898/Untitled_design_4_xujus6.jpg" alt="SCALVIQ AI Dashboard">
+      </div>
+      <div class="case-content">
+          <span class="case-tag">AI Project</span>
+          <h3 class="case-title">SCALVIQ (AI Catalog)</h3>
+          <p class="case-desc">An automated workflow project converting dummy photos into model images using Gen-AI. Engineered to eliminate high studio costs for manufacturers.</p>
+          <ul class="case-list">
+              <li>90% Cost Reduction: Replaced physical shoots with sophisticated tech workflows.</li>
+              <li>Consistency: Custom AI prompt engineering to maintain fabric textures and lighting accuracy.</li>
+          </ul>
+          <div class="case-actions">
+              <a href="https://scalviq-web.vercel.app/ai-catalog.html" target="_blank" class="btn-primary" style="padding: 12px 24px; font-size: 13px;">View AI Platform</a>
+          </div>
+      </div>
+  </div>
+
+  <!-- 3. NISHANKA YOGI - DEEPLY DEFINED -->
+  <div class="case-card fade-up">
+      <div class="case-img-wrap">
+          <img src="https://res.cloudinary.com/dl9vyqkxv/image/upload/v1775084894/IMG-20250729-WA0007_f6vqj9.jpg" alt="Nishanka Yogi Emotional Branding">
+      </div>
+      <div class="case-content">
+          <span class="case-tag">Brand Strategy & Storytelling</span>
+          <h3 class="case-title">Nishanka Yogi: "Tameez bhi, tevar bhi"</h3>
+          <p class="case-desc">A deep psychological branding strategy that transforms a clothing label into an emotional ecosystem. The brand understood that Indian girls don't just buy clothes; they buy identity and belonging.</p>
+          
+          <div class="ny-grid">
+              <div class="ny-persona">
+                  <h5>Devika</h5>
+                  <p>Traditional, elegant, rooted in sanskar.</p>
+              </div>
+              <div class="ny-persona">
+                  <h5>Nayika</h5>
+                  <p>Modern, rebellious, bold. For the professional.</p>
+              </div>
+              <div class="ny-persona">
+                  <h5>Apsara</h5>
+                  <p>Sensual, powerful, confident in femininity.</p>
+              </div>
+          </div>
+
+          <ul class="case-list">
+              <li>Story Engine: Serialized comic-style storytelling on social media where characters face real-world struggles, building a cult-like Tribe.</li>
+              <li>Anime Aesthetic: Utilizing Gen-Z anime/comic visuals to bridge the gap between traditional wear and modern rebellion.</li>
+              <li>Emotional ROI: Strategized scannable emotional messages inside garments to create a lifelong bond with the buyer.</li>
+          </ul>
+          <div class="case-actions">
+              <span class="btn-outline" style="cursor: default; border-color: var(--ink3); color: var(--ink3);">Movement Strategy Doc</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- 4. OTHER TOOLS -->
+  <div class="case-card reverse fade-up">
+      <div class="case-img-wrap">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1000&q=80" alt="Automation Tools">
+      </div>
+      <div class="case-content">
+          <span class="case-tag">Custom Development</span>
+          <h3 class="case-title">Jansampark & Resume Tool</h3>
+          <p class="case-desc">Problem-solving tools built for campaign coordination and personal branding.</p>
+          <ul class="case-list">
+              <li>Jansampark: Political campaign management app for real-time voter data tracking.</li>
+              <li>Resume Maker: High-speed resume generator for clean, professional profiles.</li>
+          </ul>
+          <div class="case-actions">
+              <a href="https://scalviq-resume.vercel.app/" target="_blank" class="btn-outline">Resume Maker</a>
+              <a href="https://script.google.com/macros/s/AKfycbyVXFzjYOa2EAFKJgkwJvyZXcNhTokmyi0AlVOEFJGqoZEEzOvtXhHuf-RsHLuuqcsezA/exec" target="_blank" class="btn-outline">Jansampark</a>
+          </div>
+      </div>
+  </div>
+
+</section>
+
+<!-- STATS -->
+<section class="sec" style="padding-top: 0;">
+  <div class="sec-header fade-up">
+    <h2 class="sec-title">Numbers That Speak</h2>
+    <p class="sec-subtitle">Verified metrics achieved across various digital growth projects.</p>
+  </div>
+  
+  <div class="stats-grid">
+    <div class="stat-box fade-up">
+      <div class="stat-num">3X</div>
+      <div class="stat-label">ROAS Improvement</div>
+      <div class="stat-sub">Via psychology-based Ad Creative optimization</div>
+    </div>
+    <div class="stat-box fade-up delay-1">
+      <div class="stat-num">4+</div>
+      <div class="stat-label">Custom Tools Built</div>
+      <div class="stat-sub">Including ERPs, SaaS, and smart workflows</div>
+    </div>
+    <div class="stat-box fade-up delay-2">
+      <div class="stat-num">150%</div>
+      <div class="stat-label">Avg. Organic Growth</div>
+      <div class="stat-sub">Through deep SEO and Shopify architecture audits</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="ft-inner fade-up">
+    <div class="ft-info">
+        <h2 class="ft-h">Let's Build & Scale.</h2>
+        <p class="ft-p">Seeking a professional who understands the balance between human psychology, data-driven marketing, and smart operations? Let's connect.</p>
+        <div class="ft-links">
+          <a href="https://wa.me/919050728595" target="_blank">WhatsApp</a>
+          <a href="mailto:nishantsishodia@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/nishantsishodia" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+  </div>
+  <div class="copyright">
+      <p>© 2026 Nishant Sisodia. Engineered with strategic intent.</p>
+  </div>
+</footer>
+
+<script>
+  // Theme Toggle Logic
+  const html = document.documentElement;
+  const thumb = document.getElementById('ttThumb');
+  const tog = document.getElementById('themeToggle');
+
+  function toggleTheme(cb){
+    if(cb.checked){
+      html.classList.add('dark');
+      thumb.textContent = '🌙';
+      localStorage.setItem('nsTheme','dark');
+    } else {
+      html.classList.remove('dark');
+      thumb.textContent = '☀️';
+      localStorage.setItem('nsTheme','light');
+    }
+  }
+
+  (function(){
+    const saved = localStorage.getItem('nsTheme');
+    if(saved === 'light'){
+      html.classList.remove('dark');
+      if(tog) tog.checked = false;
+      if(thumb) thumb.textContent = '☀️';
+    } else {
+      html.classList.add('dark');
+      if(tog) tog.checked = true;
+      if(thumb) thumb.textContent = '🌙';
+    }
+  })();
+
+  // Mobile Menu Logic
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  const navItems = document.querySelectorAll('.nl');
+
+  menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+  });
+
+  // Close menu when clicking a link
+  navItems.forEach(item => {
+      item.addEventListener('click', () => {
+          menuBtn.classList.remove('active');
+          navLinks.classList.remove('active');
+      });
+  });
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY > 30) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroDotsContainer = document.getElementById('heroSliderDots');
+    let currentHeroSlide = 0;
+    let heroSlideInterval;
+
+    if(heroSlides.length > 1) {
+      heroSlides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToHeroSlide(i);
+        heroDotsContainer.appendChild(dot);
+      });
+
+      const heroDots = document.querySelectorAll('#heroSliderDots .dot');
+
+      function updateHeroUI() {
+        heroSlides.forEach(s => {
+          s.classList.remove('active');
+          const box = s.querySelector('.hero-content-box');
+          if (box) {
+             box.style.animation = 'none';
+             box.offsetHeight; 
+             box.style.animation = null; 
+          }
+        });
+        heroDots.forEach(d => {
+          d.classList.remove('active');
+          d.style.animation = 'none';
+          d.offsetHeight;
+          d.style.animation = null;
+        });
+        
+        heroSlides[currentHeroSlide].classList.add('active');
+        heroDots[currentHeroSlide].classList.add('active');
+      }
+
+      window.nextHeroSlide = function() {
+        currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+        updateHeroUI();
+        resetHeroInterval();
+      }
+
+      window.goToHeroSlide = function(index) {
+        currentHeroSlide = index;
+        updateHeroUI();
+        resetHeroInterval();
+      }
+
+      function resetHeroInterval() {
+        clearInterval(heroSlideInterval);
+        heroSlideInterval = setInterval(window.nextHeroSlide, 7500); 
+      }
+
+      heroSlideInterval = setInterval(window.nextHeroSlide, 7500);
+    }
+  });
+</script>
+</body>
+</html>
